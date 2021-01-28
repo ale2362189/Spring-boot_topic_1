@@ -1,0 +1,5 @@
+package com.promineotech.socialMediaApi.service;
+
+public class PostService {
+
+}

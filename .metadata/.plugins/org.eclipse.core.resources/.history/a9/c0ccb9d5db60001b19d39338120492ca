@@ -1,0 +1,5 @@
+package com.promineotech.socialMediaApi.entity;
+
+public class Post {
+
+}

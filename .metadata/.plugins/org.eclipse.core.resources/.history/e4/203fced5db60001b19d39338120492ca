@@ -1,0 +1,11 @@
+package com.promineotech.socialMediaApi;
+
+@ComponentScan("com.promineotech.socailMediaApi")
+@SpringBootApplication
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+    }
+}

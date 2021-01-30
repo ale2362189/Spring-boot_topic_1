@@ -49,7 +49,8 @@ public class Comment {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-
+	@ManyToOne
+	@JoinColumn(name = "userId")
 	public User getUser() {
 		return user;
 	}
@@ -59,7 +60,7 @@ public class Comment {
 	}
 
 	@ManyToOne
-	@JoinColumn(name = "userId")
+	@JoinColumn(name = "postId")
 	public Post getPost() {
 		return post;
 	}

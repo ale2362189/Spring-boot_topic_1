@@ -7,6 +7,7 @@ import com.promineotech.socialMediaApi.entity.User;
 import com.promineotech.socialMediaApi.repository.UserRepository;
 import com.promineotech.socialMediaApi.view.Following;
 
+@Service
 public class UserService {
 
 	@Autowired
@@ -18,7 +19,7 @@ public class UserService {
 	
 	public User login(User user) throws Exception {
 		User foundUser = repo.findByUsername(user.getUsername());
-		if (foundUser != null && foundUser.getPasword().equals(user.getPasword())) {
+		if (foundUser != null && foundUser.getPassword().equals(user.getPassword())) {
 			return foundUser;
 		} else {
 			throw new Exception("Invalid username or password.");

@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -25,7 +26,7 @@ public class User {
 	@JsonIgnore
 	private Set<User> following;
 	
-	private String pasword;
+	private String password;
 	
 	@JsonIgnore
 	private Set<Post> posts;
@@ -54,7 +55,7 @@ public class User {
 		this.profilePictureUrl = profilePictureUrl;
 	}
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "following",
 		joinColumns = @JoinColumn(name = "userId", referencedColumnName = "id"),
 		inverseJoinColumns = @JoinColumn(name = "followingId", referencedColumnName = "id"))
@@ -66,13 +67,13 @@ public class User {
 	}
 	
 	@JsonIgnore
-	public String getPasword() {
-		return pasword;
+	public String getPassword() {
+		return password;
 	}
 	
 	@JsonProperty
-	public void setPasword(String pasword) {
-		this.pasword = pasword;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	@OneToMany(mappedBy = "user")

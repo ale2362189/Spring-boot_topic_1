@@ -1,2 +1,6 @@
 1611786251983	Rename type 'following'
 1611800069427	Delete element
+1612027849173	Rename field 'pasword'
+1612028466213	Rename method 'getPasword'
+1612028494027	Rename local variable 'pasword'
+1612028509435	Rename method 'setPasword'
